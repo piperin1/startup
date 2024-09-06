@@ -1,1 +1,1 @@
-**MODIFICATION** test text for conflicttest.md
+**MODIFICATION2** test text for conflicttest.md
