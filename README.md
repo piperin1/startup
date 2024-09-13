@@ -22,10 +22,10 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > 
 > **JavaScript:** Provides functionality for action options, popup pages, and more.
 > 
-> **React:** Dynamically update pet stats with UI, organize components.
+> **React:** Dynamically update pet stats with UI, organize components. Reactive to user's actions.
 > 
 > **Web service:** Save and load pet's status. Integrate external APIs (weather API)
 > 
-> **Authentication/Database data:** Uses a simple login system that allows users to create an account and save their pet's status and information.
+> **Authentication/Database data:** Uses a simple login system that allows users to create an account and save their pet's status and information. Can't play unless authenticated.
 > 
 > **WebSocket data:** Provides real-time updates/notifications on pet's status to user
