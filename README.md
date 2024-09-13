@@ -24,7 +24,7 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > 
 > **React:** Dynamically update pet stats with UI, organize components.
 > 
-> **Web service:** Save and load pet's status. Integrate external APIs
+> **Web service:** Save and load pet's status. Integrate external APIs (weather API)
 > 
 > **Authentication/Database data:** Uses a simple login system that allows users to create an account and save their pet's status and information.
 > 
