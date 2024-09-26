@@ -77,5 +77,9 @@
 
 If we rendered this HTML, and added just a bit of styling, so we can see how they related to each other, we would see the following.
 
+<<<<<<< HEAD
 ![HTML structure](/images/htmlStructure.jpg)
+=======
+![HTML structure](https://github.com/piperin1/startup/blob/main/images/htmlStructure.jpg)
+>>>>>>> refs/remotes/origin/main
  
