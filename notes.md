@@ -77,5 +77,5 @@
 
 If we rendered this HTML, and added just a bit of styling, so we can see how they related to each other, we would see the following.
 
-![HTML structure](htmlStructure.jpg)
+![HTML structure](/images/htmlStructure.jpg)
  
