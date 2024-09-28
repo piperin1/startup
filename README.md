@@ -29,3 +29,13 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > **Authentication/Database data:** Uses a simple login system that allows users to create an account and save their pet's status and information. Can't play unless authenticated.
 > 
 > **WebSocket data:** Provides real-time updates/notifications on pet's status to user
+>
+ **HTML deliverable**
+> For this deliverable I built out my application in HTML
+> - Pages: Three HTML pages, one login, one select, and one home page.
+> - Links: The login page currently links to the select, and the select to the home. There is a link navigation on the home page that I will eventually move.
+> - Text: There is text that represents all actions and all placeholders, including action buttons such as "feed" and "pet."
+> - Images: There is a placeholder image where I will put my pet animations.
+> - DB/Login: There is a login page where users will authenticate their accounts and be able to access their pet. This is also represented by username and pet name placeholders.
+> - Websocket: There is a placeholder where users will receive realtime notifications on their/other pet(s).
+> - 3rd Party Calls: There is a placeholder where weather API will be integrated with the application.
