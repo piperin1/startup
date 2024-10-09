@@ -1,96 +1,122 @@
 * {
-    font-family: "lucida sans unicode", "lucida grande", sans-serif;
-    font-size: 16px;
+    font-family: "dogica","dogicapixelbold", sans-serif;
+    font-size: 12px;
     color: #211313;
-    font-style: normal;
     font-weight: bold;
-    font-variant: normal;
     letter-spacing: 1.3px;
     line-height: 20px;
-    
-    
+    box-sizing: border-box; /* Ensures padding/margin don't affect element width */
 }
 
-body{
-    background-color:#664e3b;
+body {
+    background-color: #a88b72;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flex container for the whole page */
+    flex-direction: column;
+    min-height: 100vh; /* Makes sure body stretches to full height */
 }
 
 h1 {
-   
-    padding-left:30px;
-    padding-right:30px;
-    padding-top:10px;
-    padding-bottom:10px;
-    background-color:#211313;
-    margin:0;
-   
-
-    display:flex;
+    padding: 10px 30px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    background-color: #5e4338;
+    margin: 0;
+    color: white;
+    display: flex;
     justify-content: space-between;
 }
-.left{
-    color:white;
-    text-align: left;
-    margin-right: auto;
-    font-size:20px;
-}
 
-.center{
-    
-    text-align: center;
-    margin: auto;
-    color:white;
-    font-size:20px;
-}
-
-.right{
-    text-align:right;
-    margin-left:auto;
-    color:white;
-    font-size:20px;
+.left, .center, .right {
+    font-size: 13px;
+    color:rgb(229, 220, 191);
 }
 
 footer {
     text-align: center;
     margin: 20px;
+    display: flex;
+    justify-content: center;
 }
-
 
 section {
-    background-color:rgb(240, 218, 172);
+    background-color:#d5b790;
     padding: 20px;
-    border-radius:20px;
+    border-radius: 5px;
     margin: 20px;
+    flex-grow: 1; /* Allows section to expand */
 }
 
-h3{
-    width: 100%;
-    font-size:20px;
-    margin:20px;
-    background-color:white;
+h3 {
+    font-size: 15px;
+    margin: 20px;
+    background-color: rgb(229, 220, 191);
+    
+    
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
+    width:100%;
+    
 }
 
-
-.row{
-    display:flex;
-    justify-content: space-between;
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to stack on smaller screens */
     gap: 20px;
-    width: 100%;
 }
 
 .column {
-    flex:1;
-    padding:10px;
-    margin: 20px;
-    border-radius:20px;
-
+    flex: 1; /* Makes all columns the same width */
+    padding: 10px;
+    margin: 10px 0; /* Reduces margin for better spacing */
+    border-radius: 20px;
     
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    
 }
 
+#button{
+    border-style:outset;
+    border-bottom-color:#e39f45;
+    border-right-color:#e39f45;
+    border-top-color:rgb(229, 220, 191);
+    border-left-color:rgb(229, 220, 191);
+    padding:20px;
+    width:100%;
+    border-radius:5px;
+}
+
+#notifs {
+    background-color:rgb(229, 220, 191);
+    padding:20px;
+    border-radius:5px;
+}
+
+footer{
+    display:flex;
+    justify-content: space-between;
+    color:#211313;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .column {
+        flex: 100%; /* Stack columns on small screens */
+        margin-bottom: 20px;
+    }
+}
+
+@font-face {
+    font-family: 'Dogica';
+    src: url('fonts/dogica.woff') format('woff'),
+         url('fonts/dogicapixelbold.woff') format('woff'),
+         url('fonts/dogica.woff2') format('woff2'),
+         url('fonts/dogicapixelbold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
