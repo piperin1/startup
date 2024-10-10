@@ -5,16 +5,16 @@
     font-weight: bold;
     letter-spacing: 1.3px;
     line-height: 20px;
-    box-sizing: border-box; /* Ensures padding/margin don't affect element width */
+    box-sizing: border-box; 
 }
 
 body {
     background-color: #a88b72;
     margin: 0;
     padding: 0;
-    display: flex; /* Flex container for the whole page */
+    display: flex; 
     flex-direction: column;
-    min-height: 100vh; /* Makes sure body stretches to full height */
+    min-height: 100vh; 
 }
 
 h1 {
@@ -45,7 +45,7 @@ section {
     padding: 20px;
     border-radius: 5px;
     margin: 20px;
-    flex-grow: 1; /* Allows section to expand */
+    flex-grow: 1; 
 }
 
 h3 {
@@ -62,14 +62,14 @@ h3 {
 
 .row {
     display: flex;
-    flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+    flex-wrap: wrap; 
     gap: 20px;
 }
 
 .column {
-    flex: 1; /* Makes all columns the same width */
+    flex: 1; 
     padding: 10px;
-    margin: 10px 0; /* Reduces margin for better spacing */
+    margin: 10px 0; 
     border-radius: 20px;
     
     display: flex;
@@ -103,10 +103,10 @@ footer{
     color:#211313;
 }
 
-/* Media query for responsiveness */
+
 @media (max-width: 768px) {
     .column {
-        flex: 100%; /* Stack columns on small screens */
+        flex: 100%; 
         margin-bottom: 20px;
     }
 }
