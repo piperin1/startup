@@ -41,7 +41,7 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - 3rd Party Calls: There is a placeholder where weather API will be integrated with the application.
 >
  **CSS deliverable**
-> For this deliverable I built out my application in HTML
+> For this deliverable I styled my application using CSS
 > - Header, footer, and main content styled
 > - Navigation elements: Main page navigation removed excluding GitHub link, everything else styled appropriately 
 > - Responsive sizing: Incredibly responsive sizing to appeal on all devices
