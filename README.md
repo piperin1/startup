@@ -42,7 +42,7 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 >
  **CSS deliverable**
 > For this deliverable I styled my application using CSS
-> - Header, footer, and main content styled
+> - Header, footer, and main content styled per the application context. 
 > - Navigation elements: Main page navigation removed excluding GitHub link, everything else styled appropriately 
 > - Responsive sizing: Incredibly responsive sizing to appeal on all devices
 > - Text content: Unique and consistent fonts aligning with application purpose
