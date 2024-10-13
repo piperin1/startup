@@ -103,7 +103,6 @@ footer{
     color:#211313;
 }
 
-
 @media (max-width: 768px) {
     .column {
         flex: 100%; 

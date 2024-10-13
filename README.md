@@ -39,3 +39,12 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - DB/Login: There is a login page where users will authenticate their accounts and be able to access their pet. This is also represented by username and pet name placeholders.
 > - Websocket: There is a placeholder where users will receive realtime notifications on their/other pet(s).
 > - 3rd Party Calls: There is a placeholder where weather API will be integrated with the application.
+>
+ **CSS deliverable**
+> For this deliverable I built out my application in HTML
+> - Header, footer, and main content styled
+> - Navigation elements: Main page navigation removed excluding GitHub link, everything else styled appropriately 
+> - Responsive sizing: Incredibly responsive sizing to appeal on all devices
+> - Text content: Unique and consistent fonts aligning with application purpose
+> - Images: Filler image still in place, no styling currently needed
+> - General aesthetics: All pages follow a visually pleasing aesthetic with harmonious colors and fonts
