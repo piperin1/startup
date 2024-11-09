@@ -62,6 +62,13 @@ function Simulator() {
           <p id="button">{happiness}</p>
       </div>
       </div>
+
+      <section>
+      <div id="notifs">
+      <h4>Notifications</h4>
+      <p>"User has fed their pet!" (Websocket data placeholder)</p>
+      </div>
+      </section>
     </>
   )
 }
