@@ -54,7 +54,7 @@ function Simulator() {
         </div>
         <div id= "col2" class="column">
           <img alt="pet idle animation" src={handleAnim()} height="300" width="275"/>
-          <h3>pet name | lvl __</h3>
+          <h3>pet name</h3>
         </div>
         <div id= "col3" class="column">
           <h3>stats</h3>
