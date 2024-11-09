@@ -48,3 +48,12 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - Text content: Unique and consistent fonts aligning with application purpose
 > - Images: Filler image still in place, no styling currently needed
 > - General aesthetics: All pages follow a visually pleasing aesthetic with harmonious colors and fonts
+>
+ **React deliverable**
+> For this deliverable I programmed my application using React
+> - Hunger and happiness stats dynamically update relative to user input 
+> - React Router implemented with navigation between login and simulator page
+> - Pet reacts dynamically to user input (change animations with actions)
+> - Level-up system implemented based on filled statuses
+> - Bundled using Vite
+> - Placeholders for database and Websocket inputs

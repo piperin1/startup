@@ -8,7 +8,7 @@ function Main () {
     <BrowserRouter>
         <body>
             <header>
-                <h1><div class="left"><NavLink to='/'>MyPet</NavLink></div>
+                <h1><div class="left"><NavLink to='/'>MyPet Login</NavLink></div>
                     <div class="center">Username</div>
                     <div class="right">By Piper Dickson</div>
                 </h1>

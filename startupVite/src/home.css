@@ -119,6 +119,17 @@ footer{
     }
 }
 
+input{
+    background-color: rgb(229, 220, 191);
+    margin:20px;
+    padding:10px;
+    border-radius:5px;
+    border-top-color:#e39f45;
+    border-left-color:#e39f45;
+    border-bottom-color:rgb(130, 104, 80);
+    border-right-color:rgb(130, 104, 80);
+  }
+
 @font-face {
     font-family: 'Dogica';
     src: url('fonts/dogica.woff') format('woff'),
