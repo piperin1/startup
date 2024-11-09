@@ -79,6 +79,6 @@ input{
 @font-face {
   font-family: 'DogicaBold';
   src: url('fonts/dogicapixelbold.woff2') format('woff2');
-  font-weight: bold; /* This should be bold */
+  font-weight: bold; 
   font-style: normal;
 }
