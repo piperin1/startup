@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="/src/home.css">
 </head>
 
 <body>
@@ -15,37 +15,22 @@
   
   <main>
     <section>
-      <div id="simulator" class="row">
-        <div id="col1" class = "column">
-          <h3>actions</h3>
-          <p id="button">feed</p>
-          <p id="button">pet</p>
-        </div>
-        <div id= "col2" class="column">
-          <img alt="pet fill-in" src="/images/pet_filler.png" height="300" width="300"/>
-          <h3>pet name | lvl __</h3>
-        </div>
-        <div id= "col3" class="column">
-          <h3>stats</h3>
-          <p id="button">hunger</p>
-          <p id="button">happiness</p>
-      </div>
-      </div>
-    
-    </section>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </section>
 
-    <section>
-      <div id="notifs">
-      <h4>Notifications</h4>
-      <p>"User has fed their pet!" (Websocket data placeholder)</p>
-      </div>
-    </section>
-  </main>
+  <section>
+    <div id="notifs">
+    <h4>Notifications</h4>
+    <p>"User has fed their pet!" (Websocket data placeholder)</p>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    <div class="left_foot">Weather Status (External API Placeholder)</div>
-    <div class="right_foot"><a href="https://github.com/piperin1/startup">Repo Link (Github)</a></div>
-  </footer>
+<footer>
+  <div class="left_foot">Weather Status (External API Placeholder)</div>
+  <div class="right_foot"><a href="https://github.com/piperin1/startup">Repo Link (Github)</a></div>
+</footer>
 
 </body>
 </html>
