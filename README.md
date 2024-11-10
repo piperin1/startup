@@ -57,3 +57,4 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - Level-up system implemented based on filled statuses
 > - Bundled using Vite
 > - Placeholders for database and Websocket inputs
+> - Hooks: useState and useEffect implemented to control pet statuses
