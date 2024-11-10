@@ -1,5 +1,7 @@
 import Simulator from './sim.jsx'
 import Login from './login.jsx'
+import MockWeather from './mockup.jsx';
+
 import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
 import './home.css'
 
@@ -18,7 +20,7 @@ function Main () {
                     <Route path="/home" element={<Simulator/>} />
                 </Routes>
           <footer>
-            <div class="left_foot">Weather Status (External API Placeholder)</div>
+            <div class="left_foot">Weather Status:{<MockWeather/>}</div>
             <div class="right_foot"><a href="https://github.com/piperin1/startup">Repo Link (Github)</a></div>
           </footer>
 

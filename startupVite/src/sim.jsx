@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import eatAnim from './animations/eat_anim.gif'
 import idleAnim from './animations/idle_anim.gif'
 import './home.css'
+import MockNotification from './notifs'
 
 function Simulator() {
 
@@ -79,7 +80,7 @@ function Simulator() {
       <section>
       <div id="notifs">
       <h4>Notifications</h4>
-      <p>"User has fed their pet!" (Websocket data placeholder)</p>
+      <div>{<MockNotification/>}</div>
       </div>
       </section>
     </>
