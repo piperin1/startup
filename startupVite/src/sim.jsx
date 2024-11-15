@@ -72,7 +72,7 @@ function Simulator() {
         <div id= "col3" class="column">
           <h3>stats</h3>
           <p id="button">hunger:{hunger}</p>
-          <p id="button">happines:{happiness}</p>
+          <p id="button">happiness:{happiness}</p>
       </div>
       </div>
       </section>
