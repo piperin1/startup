@@ -55,13 +55,13 @@ function Simulator() {
 
  
   const getBackgroundClass = () => {
-    if (currentWeather === 0 || currentWeather === 1) return 'clear';
-    if (currentWeather === 2) return 'partly-cloudy';
-    if (currentWeather === "Overcast" || currentWeather === 45) return 'overcast';
-    if (currentWeather === 51 || currentWeather === 53 || currentWeather === 61) return 'light-rain';
-    if (currentWeather === 55 || currentWeather === 63 || currentWeather === 65 || currentWeather === 95) return 'heavy-rain';
-    if (currentWeather === 71 || currentWeather === 48) return 'light-snow';
-    if (currentWeather === 75 || currentWeather === 73) return 'heavy-snow';
+    if (currentWeather === 'Clear skies' || currentWeather === 'Mainly clear') return 'clear';
+    if (currentWeather === 'Partly cloudy') return 'partly-cloudy';
+    if (currentWeather === "Overcast" || currentWeather === 'Foggy') return 'overcast';
+    if (currentWeather === "Drizzle" || currentWeather === "Moderate drizzle" || currentWeather === "Light rain") return 'light-rain';
+    if (currentWeather === "Heavy drizzle" || currentWeather === "Moderate rain" || currentWeather === "Heavy rain" || currentWeather === "Thunderstorm") return 'heavy-rain';
+    if (currentWeather === "Light snow" || currentWeather === "Freezing fog") return 'light-snow';
+    if (currentWeather === "Heavy snow" || currentWeather === "Moderate snow") return 'heavy-snow';
     return 'clear'; 
   };
 
