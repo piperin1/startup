@@ -58,3 +58,11 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - Bundled using Vite
 > - Placeholders for database and Websocket inputs
 > - Hooks: useState and useEffect implemented to control pet statuses
+>
+ **Service deliverable**
+> For this deliverable I added backend endpoints for my web service and a third-party service
+> - Node.js/Express service implemented
+> - Static middleware for frontend implemented
+> - Calls to third-party weather service API to deliver local weather personalization
+> - Backend service endpoints implemented for web service and third-party service
+> - Frontend calls to backend endpoints using fetch()
