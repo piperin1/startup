@@ -81,6 +81,7 @@ h3 {
 }
 
 #button{
+    background-color: #d5b790;
     border-style:outset;
     border-bottom-color:#e39f45;
     border-right-color:#e39f45;
@@ -154,7 +155,7 @@ input{
   
   #mainsimbg.overcast {
     background-image: url('./weatherims/overcastbg.png');
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
   }
   

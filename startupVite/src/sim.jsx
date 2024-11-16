@@ -45,8 +45,28 @@ function Simulator() {
           const data = await response.json();
           const weatherCode = data.current_weather.weathercode;
 
+          const weatherDescriptions = {
+            0: 'Clear skies',
+            1: 'Mainly clear',
+            2: 'Partly cloudy',
+            3: 'Overcast',
+            45: 'Foggy',
+            48: 'Freezing fog',
+            51: 'Drizzle',
+            53: 'Moderate drizzle',
+            55: 'Heavy drizzle',
+            61: 'Light rain',
+            63: 'Moderate rain',
+            65: 'Heavy rain',
+            71: 'Light snow',
+            73: 'Moderate snow',
+            75: 'Heavy snow',
+            95: 'Thunderstorm',
+          };
+
           const description = weatherDescriptions[weatherCode] || 'Unknown weather';
           setCurrentWeather(description);
+
 
         } catch (error) {
           console.error(error);
@@ -58,17 +78,18 @@ function Simulator() {
     }
   }, [latitude, longitude]);
 
+ 
   const getBackgroundClass = () => {
-    if (!currentWeather) return 'clear'; 
     if (currentWeather === 0 || currentWeather === 1) return 'clear';
     if (currentWeather === 2) return 'partly-cloudy';
-    if (currentWeather === 3 || currentWeather === 45) return 'overcast';
+    if (currentWeather === "Overcast" || currentWeather === 45) return 'overcast';
     if (currentWeather === 51 || currentWeather === 53 || currentWeather === 61) return 'light-rain';
     if (currentWeather === 55 || currentWeather === 63 || currentWeather === 65 || currentWeather === 95) return 'heavy-rain';
     if (currentWeather === 71 || currentWeather === 48) return 'light-snow';
     if (currentWeather === 75 || currentWeather === 73) return 'heavy-snow';
     return 'clear'; 
   };
+
 
   //Simulator code continues
 
