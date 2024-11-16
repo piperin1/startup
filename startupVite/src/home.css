@@ -143,43 +143,43 @@ input{
 
   #mainsimbg.clear {
     background-image: url('./weatherims/clearbg.png');
-    background-size: 100% 100%; /* Stretch to fill width and height */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
   }
   
   #mainsimbg.partly-cloudy {
     background-image: url('./weatherims/partlycloudybg.png');
-    background-size: 100% 100%; /* Stretch to fill width and height */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
   }
   
   #mainsimbg.overcast {
     background-image: url('./weatherims/overcastbg.png');
-    background-size: 100% 100%; /* Stretch to fill width and height */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
   }
   
   #mainsimbg.light-rain {
     background-image: url('./weatherims/lightrainbg.png');
-    background-size: 100% 100%; /* Stretch to fill width and height */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
   }
   
   #mainsimbg.heavy-rain {
     background-image: url('./weatherims/heavyrainbg.png');
-    background-size: 100% 100%; /* Stretch to fill width and height */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
   }
   
   #mainsimbg.light-snow {
     background-image: url('./weatherims/lightsnowbg.png');
-    background-size: 100% 100%; /* Stretch to fill width and height */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
   }
   
   #mainsimbg.heavy-snow {
     background-image: url('./weatherims/heavysnowbg.png');
-    background-size: 100% 100%; /* Stretch to fill width and height */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
   }
   

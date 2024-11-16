@@ -14,7 +14,8 @@ function Simulator() {
   const [isEating, setIsEating] = useState(false);
   const [isBeingPet, setIsBeingPet] = useState(false);
 
-  //Weather API integration for background changes
+  //Weather API copy integration for background changes
+
   const [currentWeather, setCurrentWeather] = useState('Loading weather...');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
