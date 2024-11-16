@@ -52,6 +52,7 @@ function MockWeather() {
 
           const description = weatherDescriptions[weatherCode] || 'Unknown weather';
           setCurrentWeather(description);
+
         } catch (error) {
           console.error(error);
           setCurrentWeather('Error retrieving weather data.');

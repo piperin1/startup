@@ -4,6 +4,7 @@ import idleAnim from './animations/idle_anim.gif'
 import './home.css'
 import MockNotification from './notifs'
 
+
 function Simulator() {
 
   const [hunger, setHunger] = useState(() => parseInt(localStorage.getItem('hunger')) || 0);
@@ -13,7 +14,7 @@ function Simulator() {
   const [isEating, setIsEating] = useState(false);
   const [isBeingPet, setIsBeingPet] = useState(false);
 
-  //Weather API here...
+  //Weather API integration for background changes
   const [currentWeather, setCurrentWeather] = useState('Loading weather...');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
@@ -46,6 +47,7 @@ function Simulator() {
 
           const description = weatherDescriptions[weatherCode] || 'Unknown weather';
           setCurrentWeather(description);
+
         } catch (error) {
           console.error(error);
           setCurrentWeather('Error retrieving weather data.');
@@ -56,19 +58,19 @@ function Simulator() {
     }
   }, [latitude, longitude]);
 
-  const getBackgroundImage = () => {
-    if (!currentWeather) return 'weatherims/clearbg.png'; 
-    if (currentWeather === 0 || currentWeather === 1) return 'weatherims/clearbg.png';
-    if (currentWeather === 2) return 'weatherims/partlycloudybg.png';
-    if (currentWeather === 3 || currentWeather === 45) return 'weatherims/overcastbg.png';
-    if (currentWeather === 51 || currentWeather === 53 || currentWeather === 61) return 'weatherims/lightrainbg.png';
-    if (currentWeather === 55 || currentWeather === 63 || currentWeather === 65 || currentWeather === 95) return 'weatherims/heavyrainbg.png';
-    if (currentWeather === 71 || currentWeather === 48) return 'weatherims/lightsnowbg.png';
-    if (currentWeather === 75 || currentWeather === 73) return 'weatherims/heavysnowbg.png';
-    return 'weatherims/clearbg.png'; 
+  const getBackgroundClass = () => {
+    if (!currentWeather) return 'clear'; 
+    if (currentWeather === 0 || currentWeather === 1) return 'clear';
+    if (currentWeather === 2) return 'partly-cloudy';
+    if (currentWeather === 3 || currentWeather === 45) return 'overcast';
+    if (currentWeather === 51 || currentWeather === 53 || currentWeather === 61) return 'light-rain';
+    if (currentWeather === 55 || currentWeather === 63 || currentWeather === 65 || currentWeather === 95) return 'heavy-rain';
+    if (currentWeather === 71 || currentWeather === 48) return 'light-snow';
+    if (currentWeather === 75 || currentWeather === 73) return 'heavy-snow';
+    return 'clear'; 
   };
 
-  //Simulator functions continue
+  //Simulator code continues
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -116,7 +118,7 @@ function Simulator() {
 
   return (
     <>
-      <section id="mainsimbg">
+      <div id="mainsimbg" class={getBackgroundClass()}>
       <div id="simulator" class="row">
         <div id="col1" class = "column">
           <h3>actions</h3>
@@ -133,7 +135,7 @@ function Simulator() {
           <p id="button">happiness:{happiness}</p>
       </div>
       </div>
-      </section>
+      </div>
 
       <section>
       <div id="notifs">
