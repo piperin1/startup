@@ -31,7 +31,6 @@ function MockWeather() {
           const data = await response.json();
           const weatherCode = data.current_weather.weathercode;
 
-          // Map Open-Meteo weather codes to descriptions
           const weatherDescriptions = {
             0: 'Clear skies',
             1: 'Mainly clear',
