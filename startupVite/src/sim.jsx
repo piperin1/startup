@@ -114,18 +114,18 @@ function Simulator() {
 
   return (
     <>
-      <div id="mainsimbg" class={getBackgroundClass()}>
-      <div id="simulator" class="row">
-        <div id="col1" class = "column">
+      <div id="mainsimbg" className={getBackgroundClass()}>
+      <div id="simulator" className="row">
+        <div id="col1" className = "column">
           <h3>actions</h3>
-          <p id="button" class="click" onClick={handleFeed}>feed</p>
-          <p id="button" class="click" onClick={handlePet}>pet</p>
+          <p id="button" className="click" onClick={handleFeed}>feed</p>
+          <p id="button" className ="click" onClick={handlePet}>pet</p>
         </div>
-        <div id= "col2" class="column">
+        <div id= "col2" className ="column">
           <img alt="pet idle animation" src={handleAnim()} height="300" width="275"/>
           <h3>pet name | lvl {level}</h3>
         </div>
-        <div id= "col3" class="column">
+        <div id= "col3" className="column">
           <h3>stats</h3>
           <p id="button">hunger:{hunger}</p>
           <p id="button">happiness:{happiness}</p>

@@ -6,7 +6,7 @@ import { AuthState } from './authState';
 
 export function Login({ userName, authState, onAuthChange }) {
   return (
-    <section class="column">
+    <section className="column">
       <div>
         {authState !== AuthState.Unknown && <h1>MyPet Login</h1>}
         {authState === AuthState.Authenticated && (
