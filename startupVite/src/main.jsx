@@ -31,7 +31,7 @@ function Main () {
                           }}
                         />
                       }
-            exact/>
+                    exact/>
                     <Route path="/home" element={<Simulator/>} />
                 </Routes>
           <footer>

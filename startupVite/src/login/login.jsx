@@ -7,7 +7,7 @@ export function Login({ userName, authState, onAuthChange }) {
   return (
     <section className="column">
       <div>
-        {authState !== AuthState.Unknown && <h4>Login</h4>}
+        {authState !== AuthState.Unknown && <h1 className="center">Login</h1>}
         {authState === AuthState.Authenticated && (
           <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
         )}
