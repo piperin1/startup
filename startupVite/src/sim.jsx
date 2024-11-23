@@ -10,7 +10,11 @@ function Simulator() {
 
   const [hunger, setHunger] = useState(() => parseInt(localStorage.getItem('hunger')) || 0);
   const [happiness, setHappiness] = useState(() => parseInt(localStorage.getItem('happiness')) || 0);
-  const [level, setlevel] = useState(() => parseInt(localStorage.getItem('level')) || 0);
+  const [level, setLevel] = useState(() => {
+    const savedLevel = localStorage.getItem('level');
+    return savedLevel !== null && !isNaN(parseInt(savedLevel, 10)) ? parseInt(savedLevel, 10) : 0;
+  });
+  
 
   const [isEating, setIsEating] = useState(false);
   const [isBeingPet, setIsBeingPet] = useState(false);
@@ -87,7 +91,7 @@ function Simulator() {
 
   const handleFeed = () => {
     if (isEating || isBeingPet) return;
-    setHunger(Math.min(hunger + 10, 100)); 
+    setHunger(Math.min(hunger + 30, 100)); 
     setIsEating(true);
     setTimeout(() => setIsEating(false), 2000);
     handleLvl();
@@ -95,7 +99,7 @@ function Simulator() {
 
   const handlePet = () => {
     if (isEating || isBeingPet) return;
-    setHappiness(Math.min(happiness + 10, 100));
+    setHappiness(Math.min(happiness + 30, 100));
     setIsBeingPet(true);
     setTimeout(() => setIsBeingPet(false), 2000);
     handleLvl();
@@ -107,13 +111,64 @@ function Simulator() {
     return idleAnim;
   }
 
-  const handleLvl = () => {
+ /* const handleLvl = () => {
     if (happiness && hunger == 100) {
       setlevel(level + 1, 100);
       setHappiness(0);
       setHunger(0);
     }
   }
+    */
+
+  useEffect(() => {
+    const fetchLevel = async () => {
+      try {
+        const response = await fetch('/api/secure/level', { credentials: 'include' });
+        if (!response.ok) throw new Error('Failed to fetch level.');
+        
+        const data = await response.json();
+        const fetchedLevel = parseInt(data.level, 10);
+        
+        if (isNaN(fetchedLevel)) {
+          console.error('Invalid level data from backend:', data.level);
+          setLevel(0); // Default to 0 if invalid
+        } else {
+          setLevel(fetchedLevel);
+          localStorage.setItem('level', fetchedLevel); // Sync with localStorage
+        }
+      } catch (error) {
+        console.error('Error fetching level:', error);
+      }
+    };
+  
+    fetchLevel();
+  }, []);
+  
+
+  const handleLvl = async () => {
+    if (happiness === 100 && hunger === 100) {
+      const newLevel = isNaN(level) ? 1 : level + 1;
+      setLevel(newLevel);
+      setHappiness(0);
+      setHunger(0);
+  
+      try {
+        const response = await fetch('/api/secure/level', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ level: newLevel }),
+        });
+  
+        if (!response.ok) throw new Error('Failed to update level on server.');
+        console.log('Level successfully updated on server.');
+      } catch (error) {
+        console.error('Error updating level:', error);
+      }
+    }
+  };
+  
+
 
   return (
     <>

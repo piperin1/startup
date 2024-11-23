@@ -33,11 +33,17 @@ async function createUser(email, password) {
     email: email,
     password: passwordHash,
     token: uuidv4(),
+    level: 0,
   };
   await userCollection.insertOne(user);
   return user;
 }
 
-export { getUser, getUserByToken, createUser};
+async function updateUserLevel(email, newLevel) {
+  await userCollection.updateOne({ email }, { $set: { level: newLevel } });
+  return await getUser(email);
+}
+
+export { getUser, getUserByToken, createUser, updateUserLevel};
 
   

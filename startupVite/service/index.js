@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import bcrypt from 'bcrypt';
 
 const app = express();
-const { getUser, getUserByToken, createUser } = await import('./database.js').then(module => module.default || module);
+const { getUser, getUserByToken, createUser, updateUserLevel } = await import('./database.js').then(module => module.default || module);
 const authCookieName = 'token';
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -105,6 +105,30 @@ secureApiRouter.use(async (req, res, next) => {
     next();
   } else {
     res.status(401).send({ msg: 'Unauthorized' });
+  }
+});
+
+// Retrieve current user level
+secureApiRouter.get('/level', async (req, res) => {
+  const authToken = req.cookies[authCookieName];
+  const user = await getUserByToken(authToken);
+  if (user) {
+    res.json({ level: user.level });
+  } else {
+    res.status(404).send({ msg: 'User not found' });
+  }
+});
+
+// Update user level
+secureApiRouter.put('/level', async (req, res) => {
+  const authToken = req.cookies[authCookieName];
+  const user = await getUserByToken(authToken);
+  if (user) {
+    const { level } = req.body; // Expecting level in the request body
+    const updatedUser = await updateUserLevel(user.email, level);
+    res.json({ level: updatedUser.level });
+  } else {
+    res.status(404).send({ msg: 'User not found' });
   }
 });
 
