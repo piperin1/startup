@@ -140,6 +140,18 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
+app.post('/api/secure/auth/create', (req, res) => {
+  try {
+      // Valid response
+      res.json({ success: true });
+  } catch (err) {
+      // Always send a response
+      res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
     secure: true,
