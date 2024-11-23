@@ -3,6 +3,7 @@ import eatAnim from './animations/eat_anim.gif'
 import idleAnim from './animations/idle_anim.gif'
 import './home.css'
 import MockNotification from './notifs'
+import React from 'react'
 
 
 function Simulator() {
@@ -13,6 +14,8 @@ function Simulator() {
 
   const [isEating, setIsEating] = useState(false);
   const [isBeingPet, setIsBeingPet] = useState(false);
+
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
 
   //Weather API copy integration for background changes
 
@@ -123,7 +126,7 @@ function Simulator() {
         </div>
         <div id= "col2" className ="column">
           <img alt="pet idle animation" src={handleAnim()} height="300" width="275"/>
-          <h3>pet name | lvl {level}</h3>
+          <h3>{userName}'s pet | lvl {level}</h3>
         </div>
         <div id= "col3" className="column">
           <h3>stats</h3>
