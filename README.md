@@ -73,5 +73,5 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - Data now stored in MongoDB
 > - User registration implemented, creates new account in database
 > - User authentication available for existing accounts
-> - MongoDB stores credentials and application data+
+> - MongoDB stores credentials and application data
 > - User must log in to access simulator 
