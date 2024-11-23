@@ -16,7 +16,7 @@ function Main () {
         <div>
             <header>
                 <h1><div className="left"><NavLink to='/'>MyPet Login</NavLink></div>
-                    <div className="center">{userName}</div>
+                    <div className="center">{authState === AuthState.Authenticated && userName}</div>
                     <div className="right">By Piper Dickson</div>
                 </h1>
             </header>

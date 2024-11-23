@@ -183,3 +183,7 @@ input{
     background-repeat: no-repeat;
   }
   
+  a {
+    color: rgb(229, 220, 191);
+    text-decoration:none;
+  }

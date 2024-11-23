@@ -19,7 +19,7 @@ export function Authenticated(props) {
 
   return (
     <div>
-      <div className='playerName'>Welcome {props.userName}</div>
+      <div className='playerName'>Welcome {props.userName}!</div>
       <p id="button" className="click" onClick={() => navigate('/home')}>
         Play
       </p>
