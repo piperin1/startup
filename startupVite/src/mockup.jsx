@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function MockWeather() {
+  
   const [currentWeather, setCurrentWeather] = useState('Loading weather...');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
@@ -23,9 +24,7 @@ function MockWeather() {
       const fetchWeather = async () => {
         try {
           const response = await fetch(`/api/weather?latitude=${latitude}&longitude=${longitude}`);
-
           if (!response.ok) throw new Error('Failed to fetch weather data.');
-
           const data = await response.json();
           setCurrentWeather(data.description);
         } catch (error) {
@@ -33,11 +32,9 @@ function MockWeather() {
           setCurrentWeather('Error retrieving weather data.');
         }
       };
-
       fetchWeather();
     }
   }, [latitude, longitude]);
-
   return <>{currentWeather}</>;
 }
 

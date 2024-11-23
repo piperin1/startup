@@ -1,8 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import Button from 'react-bootstrap/Button';
-
 import './home.css';
 
 export function Authenticated(props) {
@@ -13,7 +10,6 @@ export function Authenticated(props) {
       method: 'delete',
     })
       .catch(() => {
-        // Logout failed. Assuming offline
       })
       .finally(() => {
         localStorage.removeItem('userName');
@@ -24,12 +20,12 @@ export function Authenticated(props) {
   return (
     <div>
       <div className='playerName'>{props.userName}</div>
-      <Button variant='primary' onClick={() => navigate('/home')}>
+      <p id="button" className="click" onClick={() => navigate('/home')}>
         Play
-      </Button>
-      <Button variant='secondary' onClick={() => logout()}>
+      </p>
+      <p id="button" className="click" onClick={() => logout()}>
         Logout
-      </Button>
+      </p>
     </div>
   );
 }

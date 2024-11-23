@@ -3,7 +3,6 @@ import {Login} from './login/login.jsx'
 import React from 'react';
 import MockWeather from './mockup.jsx';
 import { AuthState } from './login/authState';
-
 import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
 import './home.css'
 
@@ -17,21 +16,21 @@ function Main () {
         <div>
             <header>
                 <h1><div className="left"><NavLink to='/'>MyPet Login</NavLink></div>
-                    <div className="center">Username</div>
+                    <div className="center">{userName}</div>
                     <div className="right">By Piper Dickson</div>
                 </h1>
             </header>
                 <Routes>
                     <Route path="/" element={
-              <Login
-                userName={userName}
-                authState={authState}
-                onAuthChange={(userName, authState) => {
-                  setAuthState(authState);
-                  setUserName(userName);
-                }}
-              />
-            }
+                        <Login
+                          userName={userName}
+                          authState={authState}
+                          onAuthChange={(userName, authState) => {
+                            setAuthState(authState);
+                            setUserName(userName);
+                          }}
+                        />
+                      }
             exact/>
                     <Route path="/home" element={<Simulator/>} />
                 </Routes>

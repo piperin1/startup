@@ -2,12 +2,10 @@ import express from 'express';
 import fetch from 'node-fetch';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcrypt';
+
 const app = express();
 const { getUser, getUserByToken, createUser } = await import('./database.js').then(module => module.default || module);
-
-
 const authCookieName = 'token';
-
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.use(express.json());
@@ -15,7 +13,7 @@ app.use(cookieParser());
 app.use(express.static('public'));
 app.set('trust proxy', true);
 
-// Router for service endpoints
+
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
@@ -23,17 +21,14 @@ app.use(`/api`, apiRouter);
 app.get('/api/weather', async (req, res) => {
   const { latitude, longitude } = req.query;
 
-  
   if (!latitude || !longitude) {
     return res.status(400).json({ error: 'Latitude and longitude are required' });
   }
 
   try {
-    // Fetch the weather data from the third-party API
     const response = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
     );
-
     if (!response.ok) {
       throw new Error('Failed to fetch weather data');
     }
@@ -69,27 +64,23 @@ app.get('/api/weather', async (req, res) => {
   }
 });
 
-
+//Secure Router Connections (login endpoints)
 const secureApiRouter = express.Router();
 apiRouter.use('/secure', secureApiRouter);
 
-// CreateAuth token for a new user
 secureApiRouter.post('/auth/create', async (req, res) => {
   if (await getUser(req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
     const user = await createUser(req.body.email, req.body.password);
 
-    // Set the cookie
     setAuthCookie(res, user.token);
-
     res.send({
       id: user._id,
     });
   }
 });
 
-// GetAuth token for the provided credentials
 secureApiRouter.post('/auth/login', async (req, res) => {
   const user = await getUser(req.body.email);
   if (user) {
@@ -102,7 +93,6 @@ secureApiRouter.post('/auth/login', async (req, res) => {
   res.status(401).send({ msg: 'Unauthorized' });
 });
 
-// DeleteAuth token if stored in cookie
 secureApiRouter.delete('/auth/logout', (_req, res) => {
   res.clearCookie(authCookieName);
   res.status(204).end();
@@ -118,17 +108,14 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
-//Default Error handler
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });
 });
 
-// Return the application's default page if the path is unknown
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-// setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
     secure: true,
