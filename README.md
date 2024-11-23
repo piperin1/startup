@@ -66,3 +66,12 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - Calls to third-party weather service API to deliver local weather personalization
 > - Backend service endpoints implemented for web service and third-party service
 > - Frontend calls to backend endpoints using fetch()
+>
+**DB/Login deliverable**
+> For this deliverable I implemented user creation and authentication 
+> - MongoDB Atlas database created
+> - Data now stored in MongoDB
+> - User registration implemented, creates new account in database
+> - User authentication available for existing accounts
+> - MongoDB stores credentials and application data
+> - User must log in to access simulator 
