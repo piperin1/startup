@@ -1,15 +1,17 @@
 import React from 'react';
 
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-
 export function MessageDialog(props) {
+
+  if (!props.message) return null;
+
   return (
-    <Modal {...props} show={props.message} centered>
-      <Modal.Body>{props.message}</Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
+ 
+    <div className="modal-overlay">
+    <div className="modal-container">
+        <p>{props.message}</p>
+        <p id="button" className="click" onClick={props.onHide}>Close</p>
+      </div>
+    </div>
+  
   );
 }
