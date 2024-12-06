@@ -32,7 +32,7 @@ function Main () {
                         />
                       }
                     exact/>
-                    <Route path="/home" element={<Simulator/>} />
+                    <Route path="/home" element={<Simulator userName={userName}/>} />
                 </Routes>
           <footer>
             <div className="left_foot">Weather Status:{<MockWeather/>}</div>
