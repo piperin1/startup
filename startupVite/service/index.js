@@ -2,6 +2,7 @@ import express from 'express';
 import fetch from 'node-fetch';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcrypt';
+import peerProxy from './peerProxy.js';
 
 const app = express();
 const { getUser, getUserByToken, createUser, updateUserLevel } = await import('./database.js').then(module => module.default || module);
@@ -163,3 +164,5 @@ function setAuthCookie(res, authToken) {
 const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
