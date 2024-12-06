@@ -3,6 +3,7 @@ import eatAnim from './animations/eat_anim.gif'
 import idleAnim from './animations/idle_anim.gif'
 import './home.css'
 import MockNotification from './notifs'
+import { GameEvent, GameNotifier } from './gameNotifier';
 import React from 'react'
 
 
@@ -95,6 +96,7 @@ function Simulator() {
     setIsEating(true);
     setTimeout(() => setIsEating(false), 2000);
     handleLvl();
+    handleFeedClick();
   }
 
   const handlePet = () => {
@@ -103,6 +105,7 @@ function Simulator() {
     setIsBeingPet(true);
     setTimeout(() => setIsBeingPet(false), 2000);
     handleLvl();
+    handlePetClick();
   }
 
   const handleAnim = () => {
@@ -111,14 +114,7 @@ function Simulator() {
     return idleAnim;
   }
 
- /* const handleLvl = () => {
-    if (happiness && hunger == 100) {
-      setlevel(level + 1, 100);
-      setHappiness(0);
-      setHunger(0);
-    }
-  }
-    */
+  
 
   useEffect(() => {
     const fetchLevel = async () => {
@@ -168,6 +164,13 @@ function Simulator() {
     }
   };
   
+    function handleFeedClick() {
+      GameNotifier.broadcastEvent(userName, GameEvent.Feed, { action: 'fed their pet' });
+    }
+  
+    function handlePetClick() {
+      GameNotifier.broadcastEvent(userName, GameEvent.Pet, { action: 'petted their pet' });
+    }
 
 
   return (
@@ -194,7 +197,7 @@ function Simulator() {
       <section>
       <div id="notifs">
       <h4>Notifications</h4>
-      <div>{<MockNotification/>}</div>
+      <div>{<MockNotification userName={userName}/>}</div>
       </div>
       </section>
     </>

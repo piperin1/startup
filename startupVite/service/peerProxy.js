@@ -1,5 +1,5 @@
-const { WebSocketServer } = require('ws');
-const uuid = require('uuid');
+import { WebSocketServer } from 'ws';
+import { v4 as uuidv4 } from 'uuid';
 
 function peerProxy(httpServer) {
   // Create a websocket object
@@ -16,7 +16,7 @@ function peerProxy(httpServer) {
   let connections = [];
 
   wss.on('connection', (ws) => {
-    const connection = { id: uuid.v4(), alive: true, ws: ws };
+    const connection = { id: uuidv4(), alive: true, ws: ws };
     connections.push(connection);
 
     // Forward messages to everyone except the sender
@@ -57,4 +57,4 @@ function peerProxy(httpServer) {
   }, 10000);
 }
 
-module.exports = { peerProxy };
+export default peerProxy;
