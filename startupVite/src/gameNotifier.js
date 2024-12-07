@@ -16,7 +16,7 @@ class EventMessage {
 class GameEventNotifier {
   events = [];
   handlers = [];
-  eventQueue = []; // Queue for events
+  eventQueue = [];
 
   constructor() {
     let port = window.location.port;
@@ -24,8 +24,8 @@ class GameEventNotifier {
     this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
     this.socket.onopen = (event) => {
       console.log('WebSocket connected.');
-      this.eventQueue.forEach((queuedEvent) => this.socket.send(JSON.stringify(queuedEvent))); // Send queued events
-      this.eventQueue = []; // Clear queue
+      this.eventQueue.forEach((queuedEvent) => this.socket.send(JSON.stringify(queuedEvent))); 
+      this.eventQueue = []; 
       this.receiveEvent(new EventMessage('MyPet', GameEvent.System, { msg: 'connected' }));
     };
     this.socket.onclose = (event) => {

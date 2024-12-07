@@ -165,6 +165,7 @@ function Simulator() {
     }
   };
   
+    //Broadcasting events
     function handleFeedClick() {
       GameNotifier.broadcastEvent(userName, GameEvent.Feed, { action: 'fed their pet' });
     }
