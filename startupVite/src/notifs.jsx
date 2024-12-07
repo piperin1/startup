@@ -45,9 +45,9 @@ function MockNotification() {
       return events.map((event, index) => {
         let message = 'unknown';
         if (event.type === GameEvent.Feed) {
-          message = `fed the pet`;
+          message = `fed their pet!`;
         } else if (event.type === GameEvent.Pet) {
-          message = `petted the pet`;
+          message = `petted their pet!`;
         }
   
         return (
@@ -60,10 +60,7 @@ function MockNotification() {
     }
   
     return (
-      <div className="players">
-        <div>
-        <span className="player-name">{userName}</span>
-        </div>
+      <div className="notifsBar">
         <div id="player-messages">{createMessageArray()}</div>
       </div>
     );
