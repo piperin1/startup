@@ -75,3 +75,12 @@ Link to notes: https://github.com/piperin1/startup/blob/main/notes.md
 > - User authentication available for existing accounts
 > - MongoDB stores credentials and application data
 > - User must log in to access simulator 
+>
+**Websocket deliverable**
+> For this deliverable I created real-time, live notifications for users
+> - Backend listens for websocket connection
+> - Frontend makes websocket connection
+> - Data is sent over websocket connection
+> - Data is integrated in user interface, see "Notifications" box
+> - All visible elements are functional
+>
