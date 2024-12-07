@@ -3,37 +3,51 @@
   import './home.css';
   
   function MockNotification({ userName }) {
-    const [latestEvent, setLatestEvent] = React.useState(null);
+    const [notifications, setNotifications] = React.useState([]);
 
-  
     React.useEffect(() => {
-      GameNotifier.addHandler(handleGameEvent);
+      // Handler to add the new event to the notifications
+      const handleGameEvent = (event) => {
+        setNotifications((prevNotifications) => {
+          const newNotifications = [...prevNotifications, event];
+          // If there are more than 3 notifications, remove the oldest one
+          if (newNotifications.length > 3) {
+            newNotifications.shift();
+          }
+          return newNotifications;
+        });
+      };
   
+      GameNotifier.addHandler(handleGameEvent);
+
       return () => {
         GameNotifier.removeHandler(handleGameEvent);
       };
-    });
-  
-    function handleGameEvent(event) {
-      setLatestEvent(event);
-    }
+    }, []);
+
   
     function createMessageArray() {
-      if (!latestEvent) return null; // No message to display initially
+      return notifications.map((event, index) => {
 
-      let message = 'unknown';
-      if (latestEvent.type === GameEvent.Feed) {
-        message = ` fed their pet!`;
-      } else if (latestEvent.type === GameEvent.Pet) {
-        message = ` petted their pet!`;
-      }
+        let message = ' unknown';
+        if (event.type === GameEvent.Feed) {
+          message = ` fed their pet!`;
+        } else if (event.type === GameEvent.Pet) {
+          message = ` petted their pet!`;
+        } else if (event.type === GameEvent.Level) {
+          message = `'s pet leveled up!`;
+        }
+        else if (event.type == GameEvent.System){
+          message = ` connecting`;
+        }
   
-      return (
-        <div className="event">
-          <span className="player-event">{latestEvent.from}</span>
-          {message}
-        </div>
-      );
+        return (
+          <div key={index} className="event">
+            <span className="player-event">{event.from}</span>
+            {message}
+          </div>
+        );
+      });
     }
   
     return (

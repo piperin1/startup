@@ -189,8 +189,13 @@ input{
   }
 
   .notifsBar{
-    background-color:#a88b72;
+    background-color:#d5b790;
     color:rgb(229, 220, 191);
     padding: 20px;
     border-radius:5px;
+  }
+
+  #notifs{
+    padding:20px;
+    margin:20px;
   }

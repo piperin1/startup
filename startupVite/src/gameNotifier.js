@@ -2,6 +2,7 @@ const GameEvent = {
   Feed: 'gameFeed',
   Pet: 'gamePet',
   System:'system',
+  Level: 'gameLevel'
 };
 
 class EventMessage {
@@ -58,7 +59,7 @@ class GameEventNotifier {
       }
     }
   }
-  
+
   addHandler(handler) {
     this.handlers.push(handler);
   }

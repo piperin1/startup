@@ -144,6 +144,7 @@ function Simulator() {
   const handleLvl = async () => {
     if (happiness === 100 && hunger === 100) {
       const newLevel = isNaN(level) ? 1 : level + 1;
+      handleLevelClick();
       setLevel(newLevel);
       setHappiness(0);
       setHunger(0);
@@ -172,6 +173,11 @@ function Simulator() {
       GameNotifier.broadcastEvent(userName, GameEvent.Pet, { action: 'petted their pet' });
     }
 
+    function handleLevelClick() {
+      GameNotifier.broadcastEvent(userName, GameEvent.Level, { action: 's pet leveled up!' });
+    }
+
+
 
   return (
     <>
@@ -194,12 +200,12 @@ function Simulator() {
       </div>
       </div>
 
-      <section>
+      
       <div id="notifs">
       <h4>Notifications</h4>
       <div>{<MockNotification userName={userName}/>}</div>
       </div>
-      </section>
+    
     </>
   )
 }
