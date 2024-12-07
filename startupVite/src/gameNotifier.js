@@ -59,9 +59,6 @@ class GameEventNotifier {
     }
   }
   
-
-  
-
   addHandler(handler) {
     this.handlers.push(handler);
   }
