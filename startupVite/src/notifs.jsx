@@ -48,13 +48,11 @@ function MockNotification() {
           message = `fed the pet`;
         } else if (event.type === GameEvent.Pet) {
           message = `petted the pet`;
-        } else if (event.type === GameEvent.System) {
-          message = event.value.msg;
         }
   
         return (
           <div key={index} className="event">
-            <span className="player-event">{event.from.split('@')[0]}</span>
+            <span className="player-event">{event.from}</span>
             {message}
           </div>
         );
@@ -64,7 +62,7 @@ function MockNotification() {
     return (
       <div className="players">
         <div>
-          Player <span className="player-name">{userName}</span>
+        <span className="player-name">{userName}</span>
         </div>
         <div id="player-messages">{createMessageArray()}</div>
       </div>
