@@ -27,7 +27,8 @@ function MockNotification() {
   import './home.css';
   
   function MockNotification({ userName }) {
-    const [events, setEvents] = React.useState([]);
+    const [latestEvent, setLatestEvent] = React.useState(null);
+
   
     React.useEffect(() => {
       GameNotifier.addHandler(handleGameEvent);
@@ -38,25 +39,25 @@ function MockNotification() {
     });
   
     function handleGameEvent(event) {
-      setEvents([...events, event]);
+      setLatestEvent(event);
     }
   
     function createMessageArray() {
-      return events.map((event, index) => {
-        let message = 'unknown';
-        if (event.type === GameEvent.Feed) {
-          message = `fed their pet!`;
-        } else if (event.type === GameEvent.Pet) {
-          message = `petted their pet!`;
-        }
+      if (!latestEvent) return null; // No message to display initially
+
+      let message = 'unknown';
+      if (latestEvent.type === GameEvent.Feed) {
+        message = ` fed their pet!`;
+      } else if (latestEvent.type === GameEvent.Pet) {
+        message = ` petted their pet!`;
+      }
   
-        return (
-          <div key={index} className="event">
-            <span className="player-event">{event.from}</span>
-            {message}
-          </div>
-        );
-      });
+      return (
+        <div className="event">
+          <span className="player-event">{latestEvent.from}</span>
+          {message}
+        </div>
+      );
     }
   
     return (
